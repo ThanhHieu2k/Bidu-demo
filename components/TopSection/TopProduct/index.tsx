@@ -13,11 +13,11 @@ export function TopProduct(props: TopProductProps) {
   const { listProduct } = props;
   console.log(listProduct);
   return (
-    <Col lg="3" className={styles.top__product}>
-      <div className={styles.head}>
+    <Col lg="3" className={styles.topProduct}>
+      <div className={styles.topProduct__head}>
         <span>TOP SẢN PHẨM</span>
       </div>
-      <div className={styles.body}>
+      <div className={styles.topProduct__body}>
         {listProduct.map((product) => {
           return <CardProduct product={product} key={product.id} />;
         })}
