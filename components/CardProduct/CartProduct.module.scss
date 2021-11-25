@@ -5,13 +5,16 @@
   padding: 21px 19px 0;
   cursor: pointer;
   position: relative;
+
   img {
     width: 128px;
     height: 128px;
   }
+
   &:hover {
     -webkit-animation: mover 1s infinite;
   }
+
   &__left {
     margin-right: 10px;
 
