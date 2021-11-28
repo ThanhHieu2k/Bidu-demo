@@ -12,7 +12,12 @@
   }
 
   &:hover {
-    -webkit-animation: mover 1s infinite;
+    transition: transform 0.5s ease;
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   }
 
   &__left {
@@ -41,26 +46,10 @@
       font-family: "lexend";
     }
     .price {
-      /* 1.900.000 ₫ */
-
-      position: static;
-      left: 0%;
-      right: 10.79%;
-      top: 36.23%;
-      bottom: 26.09%;
-
       font-family: "Lexend";
       font-style: normal;
       font-weight: bold;
-
-      /* COLOR SYSTEM/text */
       color: #191919;
-
-      /* Inside Auto Layout */
-      flex: none;
-      order: 1;
-      flex-grow: 0;
-      margin: 5px 0px;
     }
     .location {
       font-family: "Lexend";
@@ -68,9 +57,6 @@
       font-weight: normal;
       font-size: 10px;
       line-height: 12px;
-      /* identical to box height */
-
-      /* COLOR SYSTEM/text */
       color: #191919;
     }
     .sold {
@@ -85,26 +71,7 @@
       font-weight: normal;
       font-size: 10px;
       line-height: 12px;
-      /* identical to box height */
-
-      /* COLOR SYSTEM/Sub text (#9a9a9a) */
       color: #9a9a9a;
     }
-  }
-}
-@-webkit-keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-}
-@keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-5px);
   }
 }

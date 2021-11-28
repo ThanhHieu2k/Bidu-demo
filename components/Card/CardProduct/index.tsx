@@ -1,12 +1,11 @@
 import * as React from "react";
-import { Product } from "../../pages";
 import styles from "./CartProduct.module.scss";
-import locationImg from "../../assets/location.png";
+import { Product } from "../../../data";
 export interface CardProductProps {
   product: Product;
 }
 
-export default function CardProduct({ product }: CardProductProps) {
+export function CardProduct({ product }: CardProductProps) {
   return (
     <div className={styles.card}>
       <div className={styles.card__left}>
