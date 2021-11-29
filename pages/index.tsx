@@ -1,20 +1,20 @@
-import type { NextPage } from 'next'
-// import styles from '../styles/Home.module.css'
-import Layout from '../Components/Layout/Layout'
-import SuggestToday from '../Components/SuggestToday/SuggestToday'
+import type { NextPage } from "next";
 
-const Home: NextPage = () => {
+import Layout from "../components/Layout/Layout";
+import SuggestToday from "../components/SuggestToday/SuggestToday";
+import { Banner } from "../components/Banner";
+
+const Home = () => {
   return (
-    <div >
+    <div>
       <Layout>
         <div className="main">
-          <SuggestToday/>
+          <Banner />
+          <SuggestToday />
         </div>
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default Home
-
-
+export default Home;
