@@ -1,8 +1,9 @@
 @import "./mixin.module.scss";
 @import "../../styles/breakpoint";
+
 .main {
-  max-width: 955px;
-  // max-width: 1340px;
+  width: 1340px;
+  max-width: 100%;
   margin: 0px auto;
   background-color: #fafafa !important;
 
@@ -31,9 +32,7 @@
     }
     &_content {
       position: absolute;
-      // bottom: 30px;
-      // bottom: 27px;
-      bottom:20px;
+      bottom: 31px;
       left: 0;
       display: flex;
       justify-content: center;
@@ -46,11 +45,25 @@
         bottom: 11px;
       }
 
+      h3 {
+        margin: 0px;
+        color: #000;
+        font-size: 21px;
+        font-style: italic;
+        font-weight: 550;
+
+        @include md {
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+
       &_image {
         display: flex;
         justify-content: center;
+        margin: 0px 0px 0px 6px;
         img {
-          margin: 0px 0px 0px 17px;
+          margin: 0px 0px 0px 12px;
           width: auto;
           height: 30px;
           object-fit: cover;
@@ -65,18 +78,6 @@
           }
         }
       }
-      h3 {
-        margin: 0px;
-        color: #000;
-        font-size: 20px;
-        font-style: italic;
-        font-weight: 550;
-
-        @include md {
-          font-size: 15px;
-          font-weight: 600;
-        }
-      }
     }
   }
 
@@ -85,8 +86,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin: 1px 0px 13px;
-    margin:0px 0px 10px;
+    margin: 1px 0px 9px;
     min-height: 112px;
     max-height: 120px;
     background: #fff;
@@ -117,7 +117,6 @@
         }
 
         &_img {
-          // padding: 5px 19px;
           padding: 10px 5px;
           width: 35px;
           cursor: pointer;
@@ -125,8 +124,8 @@
 
           @include md {
             height: 100%;
-            padding: 5px 0px;
-            width: 25px;
+            padding: 6px 0px;
+            width: 23px;
             max-width: 25px;
             cursor: pointer;
             object-fit: cover;
@@ -140,14 +139,16 @@
           text-transform: uppercase;
           color: #000;
           margin: 0px;
+          text-align: center;
+          max-width: 84px;
+          width: 84px;
 
           @include md {
             text-align: center;
-            font-weight: 600;
-            font-size: 6px;
+            font-weight: 550;
+            font-size: 8px;
             margin: 0px;
-            // width: 70px;
-            width: 29px;
+            width: 65px;
           }
         }
       }
@@ -159,6 +160,7 @@
     background-color: white;
     &_list {
       display: flex;
+      justify-content: space-between;
       overflow: hidden;
 
       @include md {
@@ -174,8 +176,6 @@
         }
 
         &:nth-child(2) {
-          margin: 0px 17px;
-
           @include md {
             margin: 10px 0px;
           }

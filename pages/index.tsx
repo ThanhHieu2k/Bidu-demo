@@ -1,12 +1,20 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
+import Layout from "../components/Layout/Layout";
+import SuggestToday from "../components/SuggestToday/SuggestToday";
 import { Banner } from "../components/Banner";
 
 const Home = () => {
-  return <Banner />;
+  return (
+    <div>
+      <Layout>
+        <div className="main">
+          <Banner />
+          <SuggestToday />
+        </div>
+      </Layout>
+    </div>
+  );
 };
 
 export default Home;

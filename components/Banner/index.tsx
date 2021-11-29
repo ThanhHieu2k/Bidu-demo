@@ -1,7 +1,8 @@
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Carousel } from "antd";
-import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -17,6 +18,30 @@ import styles from "./banner.module.scss";
 import "./mixin.module.scss";
 
 export const Banner = () => {
+  // Get Width of Screen Space
+  const size = useWindowSize();
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    return windowSize;
+  }
+
+  //---------------------------------------------------
+
   const objectImage = [
     {
       id: 1,
@@ -115,9 +140,16 @@ export const Banner = () => {
     dots: false,
     infinite: true,
     speed: 300,
-    // slidesToShow: 12,
-    slidesToShow: 10,
-    slidesToScroll: 3,
+    slidesToShow: 12,
+    slidesToScroll: 1,
+  };
+
+  const anotherSettings = {
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 6,
+    slidesToScroll: 1,
   };
 
   const dotPosition = {
@@ -132,18 +164,12 @@ export const Banner = () => {
     infinite: true,
     easing: "linear",
     speed: 300,
-    
   };
+
   return (
     <div className={styles.main}>
       <div className={styles.main__carousel}>
-        <Carousel
-          // effect="fade"
-          swipeToSlide
-          draggable
-          autoplay
-          {...contentStyle}
-        >
+        <Carousel swipeToSlide draggable {...contentStyle}>
           <div className={styles.main__carousel_item}>
             <img
               // className={styles.contentStyle}
@@ -152,8 +178,8 @@ export const Banner = () => {
             />
 
             <div className={styles.main__carousel_item_content}>
+              <h3>TẢI NGAY !</h3>
               <div className={styles.main__carousel_item_content_image}>
-                <h3>TẢI NGAY</h3>
                 <img
                   src="https://www.bidu.com.vn/images/header/app_store_black.png"
                   alt=""
@@ -171,8 +197,8 @@ export const Banner = () => {
               alt="Ảnh Banner 2"
             />
             <div className={styles.main__carousel_item_content}>
+              <h3>TẢI NGAY !</h3>
               <div className={styles.main__carousel_item_content_image}>
-                <h3>TẢI NGAY</h3>
                 <img
                   src="https://www.bidu.com.vn/images/header/app_store_black.png"
                   alt=""
@@ -190,8 +216,8 @@ export const Banner = () => {
               alt="Ảnh Banner 3"
             />
             <div className={styles.main__carousel_item_content}>
+              <h3>TẢI NGAY</h3>
               <div className={styles.main__carousel_item_content_image}>
-                <h3>TẢI NGAY</h3>
                 <img
                   src="https://www.bidu.com.vn/images/header/app_store_black.png"
                   alt=""
@@ -210,8 +236,8 @@ export const Banner = () => {
               alt="Ảnh Banner 4"
             />
             <div className={styles.main__carousel_item_content}>
+              <h3>TẢI NGAY !</h3>
               <div className={styles.main__carousel_item_content_image}>
-                <h3>TẢI NGAY</h3>
                 <img
                   src="https://www.bidu.com.vn/images/header/app_store_black.png"
                   alt=""
@@ -228,9 +254,18 @@ export const Banner = () => {
 
       <div className={styles.main__slick}>
         <div className={styles.main__slick_list}>
-          <Slider {...settings} className={styles.main__slick_list_slider}>
-            {renderSlick()}
-          </Slider>
+          {size.width === 375 ? (
+            <Slider
+              {...anotherSettings}
+              className={styles.main__slick_list_slider}
+            >
+              {renderSlick()}
+            </Slider>
+          ) : (
+            <Slider {...settings} className={styles.main__slick_list_slider}>
+              {renderSlick()}
+            </Slider>
+          )}
         </div>
       </div>
 
