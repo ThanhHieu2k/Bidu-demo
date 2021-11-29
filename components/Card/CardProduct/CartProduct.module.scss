@@ -75,3 +75,25 @@
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  .card {
+    max-width: 160px;
+    height: 280px;
+    display: block;
+    float: left;
+    width: 90%;
+    margin: 5px auto;
+    .rank {
+      bottom: 150px;
+      left: 25px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .sold {
+      position: absolute;
+      left: 10%;
+      right: 30.58%;
+      top: 90%;
+    }
+  }
+}

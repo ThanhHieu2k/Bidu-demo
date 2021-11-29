@@ -1,7 +1,7 @@
 .topProduct {
   border: 1.5px solid rgb(241, 241, 241);
   width: 318px;
-  
+
   &__head {
     text-align: center;
     background-color: black;
@@ -17,6 +17,17 @@
 
     &__body {
       padding: 18px 21px 0;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .topProduct {
+    float: none;
+    width: 100%;
+    font-size: 15px;
+
+    &__body {
+      padding: 0 20px;
     }
   }
 }
