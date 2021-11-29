@@ -1,16 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Carousel } from "antd";
+import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Frame1 from "../../public/images/Frame1.png";
 import Frame2 from "../../public/images/Frame2.png";
 import Frame3 from "../../public/images/Frame3.png";
-
 import carousel4 from "../../public/images/carousel4.png";
 
 import styles from "./banner.module.scss";
@@ -116,9 +115,9 @@ export const Banner = () => {
     dots: false,
     infinite: true,
     speed: 300,
-    slidesToShow: 12,
+    // slidesToShow: 12,
+    slidesToShow: 10,
     slidesToScroll: 3,
-    // swipeToSlide: false,
   };
 
   const dotPosition = {
@@ -133,6 +132,7 @@ export const Banner = () => {
     infinite: true,
     easing: "linear",
     speed: 300,
+    
   };
   return (
     <div className={styles.main}>
@@ -141,7 +141,7 @@ export const Banner = () => {
           // effect="fade"
           swipeToSlide
           draggable
-          // autoplay
+          autoplay
           {...contentStyle}
         >
           <div className={styles.main__carousel_item}>
