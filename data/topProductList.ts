@@ -15,7 +15,7 @@ export const topProductList: Product[] = [
     price: "102.000 d",
     location: "Viet Nam",
     img: productImg,
-    sold: 120,
+    sold: 12,
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ export const topProductList: Product[] = [
     price: "102.000 d",
     location: "Viet Nam",
     img: productImg,
-    sold: 3130,
+    sold: 47,
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ export const topProductList: Product[] = [
     price: "102.000 d",
     location: "Viet Nam",
     img: productImg,
-    sold: 120,
+    sold: 91,
   },
   {
     id: 5,
@@ -47,6 +47,6 @@ export const topProductList: Product[] = [
     price: "102.000 d",
     location: "Viet Nam",
     img: productImg,
-    sold: 3110,
+    sold: 51,
   },
 ];
