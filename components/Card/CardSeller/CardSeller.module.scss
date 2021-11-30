@@ -62,14 +62,14 @@
     position: relative;
     box-shadow: 2px 2px 5px rgb(187 187 187 / 75%);
 
-    &:hover {
-      transition: transform 0.5s ease;
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    }
+    // &:hover {
+    //   transition: transform 0.5s ease;
+    //   transform: translateY(-5px);
+    //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    //   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    //   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    //   -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    // }
   }
   .img_like {
     height: 10px;
