@@ -12,8 +12,9 @@ export default function LatedProduct(props: LatedProductProps) {
   return (
     <div className={styles.latedProduct}>
       <div className={styles.latedProduct__head}>
-        <span>Sản Phẩm Mới Nhất</span>
-        <hr />
+        <span className={styles.latedProduct__head_title}>
+          Sản Phẩm Mới Nhất
+        </span>
       </div>
       <div className={styles.latedProduct__body}>
         {latedProductList.map((product) => {

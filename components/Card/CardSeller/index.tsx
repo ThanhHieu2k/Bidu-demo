@@ -19,11 +19,11 @@ export function CardSeller(props: CardSellerProps) {
       <br />
       <span className={styles.card__name}>{item.name}</span>
       <span className={styles.card__status}>New</span> <br />
-      <span className={styles.card_rate}>{item.rate + " "}</span>
       <img
         src="https://www.bidu.com.vn/images/icons/shop-heart.svg"
         className={styles.img_like}
       />
+      <span className={styles.card_rate}>{" " + item.rate}</span>
       <span className={styles.card__sold}>
         {" | " + item.follow} lượt theo dõi
       </span>
