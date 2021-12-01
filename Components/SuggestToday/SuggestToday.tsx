@@ -1,198 +1,49 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
+import fetchAPI from '../../lib/products'
+import {useState, useEffect} from 'react'
 
 import ProductItem from './ProductItem/ProductItem'
 import styles from './SuggestToday.module.scss'
-
+import QuestionModel from '../../models/suggestProducts'
 // import products from '../../lib/products'
 
 
 
 export interface product{
     name: string,
-    image: string,
-    price:string,
-    origin:string,
+    images: string[],
     sold:string,
 }
 
 
 
-
 const SuggestToday = () => {
 
-    const products=[
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-1.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 4 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-2.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 3 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-3.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 2 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-4.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 1 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-5.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-6.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-7.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-8.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-9.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-10.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-11.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-2.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-7.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-12.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-11.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-10.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-8.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-9.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-7.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-1.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-12.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-3.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-4.png',
-        },
-        {
-            name:'Áo thun nữ cotton cho ngày hè, 5 màu',
-            price:'380.000 ₫',
-            origin:'Việt Nam',
-            sold:'Đã bán 120',
-            image:'/images/products/product-10.png',
-        },
+    const [products, setProducts] = useState([])
+    const [isLoad,setIsLoad] = useState(false)
+    const [count,setCount] = useState(1)
+    
 
-    ]
+    const getDatas = async ()=>{
+        setIsLoad(true)
+            let datas = await fetchAPI(count)
+            if(datas){
+                datas = QuestionModel.getListArray(datas)
+                setProducts([...products,...datas])
+                setIsLoad(false)
+            }
+    }
+
+    useEffect(()=>{
+        getDatas()
+    },[count])
+
+    const handleSeeMore =()=>{
+        setCount(prev=>prev+1)
+    }
+
     return (
         <div className={styles["suggest"] + ' grid'}>
             <div className={styles["suggest__heading"]}>
@@ -214,7 +65,8 @@ const SuggestToday = () => {
                 <div className={styles["row"]}>
                     {products.map(product=><ProductItem product={product}/>)}
                 </div>
-            <button className={styles["suggest__product-btn"]}>Xem thêm</button>
+                {isLoad && <div className={styles["lds-circle"]}><div></div></div>}
+            <button className={styles["suggest__product-btn"]} onClick={handleSeeMore}>Xem thêm</button>
             </div>
         </div>
     )
