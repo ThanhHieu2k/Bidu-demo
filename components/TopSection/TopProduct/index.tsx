@@ -10,7 +10,6 @@ export interface TopProductProps {
 
 export function TopProduct(props: TopProductProps) {
   const { topProductList } = props;
-  console.log(topProductList);
   return (
     <div className={styles.topProduct}>
       <div className={styles.topProduct__head}>
@@ -18,7 +17,13 @@ export function TopProduct(props: TopProductProps) {
       </div>
       <div className={styles.topProduct__body}>
         {topProductList.map((product) => {
-          return <CardProduct product={product} key={product.id} />;
+          return (
+            <CardProduct
+              rank={topProductList.indexOf(product)}
+              product={product}
+              key={product._id}
+            />
+          );
         })}
       </div>
     </div>

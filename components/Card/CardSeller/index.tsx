@@ -11,21 +11,18 @@ export function CardSeller(props: CardSellerProps) {
   const { item } = props;
   return (
     <div className={styles.card}>
-      <div className={styles.card__rank}>{item.id}</div>
-      <img
-        src="https://bidu.com.vn/media/images/9ec2acca-9901-4b3c-9e77-dbba1518ef1f.jpeg"
-        alt="shop avt"
-      />
+      <div className={styles.card__rank}>{item.shop.ranking_today}</div>
+      <img src={item.shop.user.avatar} alt="shop avt" />
       <br />
-      <span className={styles.card__name}>{item.name}</span>
+      <span className={styles.card__name}>{item.shop.user.userName}</span>
       <span className={styles.card__status}>New</span> <br />
       <img
         src="https://www.bidu.com.vn/images/icons/shop-heart.svg"
         className={styles.img_like}
       />
-      <span className={styles.card_rate}>{" " + item.rate}</span>
+      <span className={styles.card_rate}>{" " + item.shop.avg_rating}</span>
       <span className={styles.card__sold}>
-        {" | " + item.follow} lượt theo dõi
+        {" | " + item.shop.user.follow_count} lượt theo dõi
       </span>
       <div className={styles.card__button}>
         {"Xem shop "}
