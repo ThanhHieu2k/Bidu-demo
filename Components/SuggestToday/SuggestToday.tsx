@@ -15,6 +15,8 @@ export interface product{
     name: string,
     images: string[],
     sold:string,
+    sale_price:string,
+    price_min_max:any,
 }
 
 
@@ -28,12 +30,12 @@ const SuggestToday = () => {
 
     const getDatas = async ()=>{
         setIsLoad(true)
-            let datas = await fetchAPI(count)
-            if(datas){
-                datas = QuestionModel.getListArray(datas)
-                setProducts([...products,...datas])
-                setIsLoad(false)
-            }
+        let data = await fetchAPI(count)
+        if(data){
+            data = QuestionModel.getListArray(data)
+            setProducts([...products,...data])
+            setIsLoad(false)
+        }
     }
 
     useEffect(()=>{
@@ -65,8 +67,8 @@ const SuggestToday = () => {
                 <div className={styles["row"]}>
                     {products.map(product=><ProductItem product={product}/>)}
                 </div>
-                {isLoad && <div className={styles["lds-circle"]}><div></div></div>}
-            <button className={styles["suggest__product-btn"]} onClick={handleSeeMore}>Xem thêm</button>
+                {isLoad ? <div className={styles["lds-ellipsis"]}><div></div><div></div><div></div><div></div></div>:<button className={styles["suggest__product-btn"]} onClick={handleSeeMore}>Xem thêm</button>}
+            
             </div>
         </div>
     )

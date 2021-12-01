@@ -16,7 +16,7 @@ const ProductItem = ({product}:ProductItemProps) => {
                 <a className={styles["suggest__product-item"]}>
                     <div className={styles["suggest__product-item-img"]}>
                         <img className={styles["suggest__product-item-img--main"]}        
-                            src={product.images[0]}
+                            src={product?.images[0]}
                             width={181.33}
                             height={181.33}
                             alt='product image'
@@ -30,8 +30,8 @@ const ProductItem = ({product}:ProductItemProps) => {
                             />
                         </div>
                     </div>
-                    <p className={styles["suggest__product-item-name"]}>{product.name}</p>
-                    <span className={styles["suggest__product-item-price"]}>380.000 ₫</span>
+                    <p className={styles["suggest__product-item-name"]}>{product.name || '-'}</p>
+                    <span className={styles["suggest__product-item-price"]}>200000 ₫</span>
                     <div className={styles["suggest__product-item-origin"]}>
                         <span className={styles["suggest__product-item-origin--icon"]}>
                             <Image
@@ -43,7 +43,7 @@ const ProductItem = ({product}:ProductItemProps) => {
                         </span>
                         <span className={styles["suggest__product-item-origin--name"]}>Việt Nam</span>
                     </div>
-                    <div className={styles["suggest__product-item-sold"]}>đã bán {product.sold}</div>
+                    <div className={styles["suggest__product-item-sold"]}>đã bán {product?.sold}</div>
                 </a>
             </Link>
             
