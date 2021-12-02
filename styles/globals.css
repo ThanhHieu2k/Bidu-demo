@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+/* .slick-current { 
+  width: 80px !important;
+} */
+
 
 .slick-dots {
   position: absolute !important;
@@ -64,7 +68,7 @@ a {
 }
 
 .slick-prev {
-  left: -21px !important;
+  left: -25px !important;
   color: #000 !important;
 }
 
