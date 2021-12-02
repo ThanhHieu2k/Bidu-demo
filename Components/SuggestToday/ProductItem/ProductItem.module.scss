@@ -23,10 +23,15 @@
 
         &-name{
             line-height: 19.5px;
+            height: 39px;
+            overflow: hidden;
             font-size: 1.4rem;
             font-weight: 400;
             margin: 5px 0 5px 0;
             letter-spacing: 0.6px;
+            display: -webkit-box ; 
+            -webkit-box-orient: vertical ; // set hướng của box là chiều dọc
+            -webkit-line-clamp: 2 ; // bị giới hạn tới dòng nào để hiện dấu 3 chấm
         }
 
         &-price{
