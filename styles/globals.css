@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -31,6 +32,11 @@ a {
   text-decoration: none;
 }
 
+/* .slick-current { 
+  width: 80px !important;
+} */
+
+
 .slick-dots {
   position: absolute !important;
   right: 0px !important;
@@ -61,21 +67,36 @@ a {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+.slick-prev {
+  left: -25px !important;
+  color: #000 !important;
+}
+
+.slick-next {
+  right: -21px !important;
+  color: #000 !important;
+  z-index: 550;
+}
+
 .slick-prev:before {
+  content: "" !important;
+
   font-family: "slick" !important;
   font-size: 20px !important;
   line-height: 1 !important;
-  opacity: 0.75 !important;
+  opacity: 0.25 !important;
   color: black !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
 
 .slick-next:before {
+  content: "" !important;
+
   font-family: "slick" !important;
   font-size: 20px !important;
   line-height: 1 !important;
-  opacity: 0.75 !important;
+  opacity: 0.25 !important;
   color: black !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -95,6 +116,8 @@ a {
     z-index: 15 !important;
     list-style: none !important;
   }
+
+ 
 }
 
 .grid {

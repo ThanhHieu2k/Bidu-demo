@@ -15,8 +15,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "checkJs": false
+    "checkJs": false,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "models/categoryModel/index.tsx", "services/CategoryAPI/GetCategory.tsx"],
+  "exclude": ["node_modules"],
+  
 }
