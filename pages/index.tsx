@@ -1,9 +1,10 @@
 import TopSection from "../components/TopSection";
-import { topProductList, topSellerList, latedProductList } from "../data";
 import Layout from "../components/Layout/Layout";
 import SuggestToday from "../components/SuggestToday/SuggestToday";
 import { Banner } from "../components/Banner";
 import axios from "axios";
+import TopProductModel from "../models/topProducts";
+import TopSellerModel from "../models/topSeller";
 
 const Home = (props: any) => {
   return (
@@ -29,9 +30,11 @@ export async function getServerSideProps() {
     `https://commerce.bidu.com.vn/api/v2/mobile/home`
   );
   const data = await res.data;
-  const topProduct = await data.data.top_product;
-  const topSeller = await data.data.top_shop;
-  const newestProduct = await data.data.newest_product;
+  const topProduct = await TopProductModel.getListArray(data.data.top_product);
+  const topSeller = await TopSellerModel.getListArray(data.data.top_shop);
+  const newestProduct = await TopProductModel.getListArray(
+    data.data.newest_product
+  );
   // Pass data to the page via props
   return {
     props: {
