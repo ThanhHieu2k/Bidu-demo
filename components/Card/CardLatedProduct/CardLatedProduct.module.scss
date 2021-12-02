@@ -13,14 +13,14 @@
     height: 163px;
   }
 
-  &:hover {
-    transition: transform 0.5s ease;
-    transform: translateY(-3px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  }
+  // &:hover {
+  //   transition: transform 0.5s ease;
+  //   transform: translateY(-3px);
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  // }
 
   &__body {
     font-size: 16px;
@@ -43,8 +43,8 @@
       color: #191919;
     }
     .sold {
-      position: absolute;
-      bottom: 10px;
+      // position: absolute;
+      // bottom: 10px;
       font-family: "Lexend";
       font-size: 10px;
       line-height: 12px;
