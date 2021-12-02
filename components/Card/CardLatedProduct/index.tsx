@@ -1,22 +1,22 @@
 import * as React from "react";
 import styles from "./CardLatedProduct.module.scss";
-import { Product } from "../../../data";
+import { ITopProduct } from "../../../models/topProducts";
 
 export interface CardLatedProductProps {
-  product: Product;
+  product: ITopProduct;
 }
 
 export function CardLatedProduct({ product }: CardLatedProductProps) {
   return (
     <div className={styles.card}>
       <div>
-        <img src={product.images[0]} />
+        <img src={product.img} />
       </div>
       <div className={styles.card__body}>
         <div className={styles.name}>{product.name}</div>
-        <div className={styles.price}>{product.before_sale_price}</div>
+        <div className={styles.price}>{product.price}</div>
         <div className={styles.location}>
-          {product.shop.country === "VN" ? "Viet Nam" : product.shop.country}
+          {product.location === "VN" ? "Viet Nam" : product.location}
         </div>
         <div className={styles.sold}>Đã bán {product.sold}</div>
       </div>
