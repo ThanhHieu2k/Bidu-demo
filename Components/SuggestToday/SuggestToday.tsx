@@ -8,6 +8,8 @@ import ProductItem from './ProductItem/ProductItem'
 import styles from './SuggestToday.module.scss'
 import QuestionModel from '../../models/suggestProducts'
 // import products from '../../lib/products'
+// import 
+import ProductService from '../../services/product/index'
 
 
 
@@ -16,7 +18,6 @@ export interface product{
     images: string[],
     sold:string,
     sale_price:string,
-    price_min_max:any,
 }
 
 
@@ -25,26 +26,30 @@ const SuggestToday = () => {
 
     const [products, setProducts] = useState([])
     const [isLoad,setIsLoad] = useState(false)
-    const [count,setCount] = useState(1)
-    
+    // const [count,setCount] = useState(1)
+    const [params, setParams] = useState({
+        paginate : 1,
+        skip: 0,
+    })
 
-    const getDatas = async ()=>{
+    const getDatas = async (_params)=>{
         setIsLoad(true)
-        let data = await fetchAPI(count)
+        let data = await ProductService.getProduct(_params)
         if(data){
             data = QuestionModel.getListArray(data)
             setProducts([...products,...data])
             setIsLoad(false)
+            setParams(_params)
         }
     }
 
     useEffect(()=>{
-        getDatas()
-    },[count])
+        getDatas(params)
+    },[])
 
-    const handleSeeMore =()=>{
-        setCount(prev=>prev+1)
-    }
+    // const handleSeeMore =()=>{
+    //     setCount(prev=>prev+1)
+    // }
 
     return (
         <div className={styles["suggest"] + ' grid'}>
@@ -67,7 +72,10 @@ const SuggestToday = () => {
                 <div className={styles["row"]}>
                     {products.map(product=><ProductItem product={product}/>)}
                 </div>
-                {isLoad ? <div className={styles["lds-ellipsis"]}><div></div><div></div><div></div><div></div></div>:<button className={styles["suggest__product-btn"]} onClick={handleSeeMore}>Xem thêm</button>}
+                {isLoad ? <div className={styles["lds-ellipsis"]}><div></div><div></div><div></div><div></div></div>:<button className={styles["suggest__product-btn"]} onClick={()=>getDatas({
+                    ...params,
+                    paginate : 2
+                })}>Xem thêm</button>}
             
             </div>
         </div>
