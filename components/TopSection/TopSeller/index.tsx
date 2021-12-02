@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Seller } from "../../../data";
 import { ISeller } from "../../../models/topSeller";
 import { CardSeller } from "../../Card";
 
