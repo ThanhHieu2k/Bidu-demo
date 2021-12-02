@@ -1,0 +1,33 @@
+.topProduct {
+  border: 1.5px solid rgb(241, 241, 241);
+  width: 316px;
+
+  &__head {
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 50px;
+    font-weight: 700;
+    line-height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  &__body {
+    padding: 21px 19px 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .topProduct {
+    float: none;
+    width: 100%;
+    font-size: 15px;
+
+    &__body {
+      padding: 0 20px;
+    }
+  }
+}

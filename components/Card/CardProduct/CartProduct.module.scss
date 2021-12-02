@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&family=Open+Sans:wght@400&display=swap");
+
+.card {
+  display: flex;
+  height: 128px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 21px;
+
+  img {
+    width: 128px;
+    height: 128px;
+  }
+
+  // &:hover {
+  //   transition: transform 0.5s ease;
+  //   transform: translateY(-3px);
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  // }
+
+  &__left {
+    margin-right: 10px;
+
+    .rank {
+      background: #1a1a1a;
+      border-radius: 5px;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 4.87%;
+      left: 3.96%;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  &__right {
+    font-size: 16px;
+    line-height: 20px;
+    .name {
+      font-size: 14px;
+      font-family: "lexend";
+    }
+    .price {
+      font-family: "Lexend";
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: bold;
+      color: #191919;
+    }
+    .location {
+      font-family: "Lexend";
+      font-size: 10px;
+      line-height: 12px;
+      color: #191919;
+    }
+    .sold {
+      position: absolute;
+      left: 50%;
+      right: 30.58%;
+      top: 89.08%;
+      bottom: 0.78%;
+
+      font-family: "Lexend";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+      color: #9a9a9a;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card {
+    max-width: 160px;
+    height: 280px;
+    display: block;
+    float: left;
+    width: 90%;
+    margin: 5px auto;
+    .rank {
+      bottom: 150px;
+      left: 25px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .sold {
+      position: absolute;
+      left: 10%;
+      right: 30.58%;
+      top: 90%;
+    }
+  }
+}

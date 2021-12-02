@@ -188,13 +188,9 @@ const Banner = ({ categories }) => {
               alt="Arrow Prev"
             />
           </div>
-          {isLoading ? (
-            <Loadder />
-          ) : (
-            <Slider {...setting} className={styles.main__slick_list_slider}>
+          <Slider {...setting} className={styles.main__slick_list_slider}>
               {renderSlick()}
             </Slider>
-          )}
 
           <div className={styles["main__slick_list_arrow_next"]}>
             <img
