@@ -15,7 +15,7 @@ export interface TopSectionProps {
 export default function TopSection(props: TopSectionProps) {
   const { topProductList, topSellerList, latedProductList } = props;
   return (
-    <>
+    <div className="grid">
       <Row>
         <Col lg="3">
           <TopProduct topProductList={topProductList} />
@@ -27,6 +27,6 @@ export default function TopSection(props: TopSectionProps) {
           </>
         </Col>
       </Row>
-    </>
+    </div>
   );
 }
