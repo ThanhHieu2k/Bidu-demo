@@ -93,7 +93,7 @@ const Banner = ({ categories }) => {
     easing: "linear",
     speed: 300,
   };
-
+ 
   return (
     <div className={styles.main}>
       <div className={styles.main__carousel}>
