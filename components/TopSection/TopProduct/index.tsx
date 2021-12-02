@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Product } from "../../../data";
+import { ITopProduct } from "../../../models/topProducts";
 import { CardProduct } from "../../Card";
 
 import styles from "./TopProduct.module.scss";
 
 export interface TopProductProps {
-  topProductList: Product[];
+  topProductList: ITopProduct[];
 }
 
 export function TopProduct(props: TopProductProps) {
@@ -21,7 +21,7 @@ export function TopProduct(props: TopProductProps) {
             <CardProduct
               rank={topProductList.indexOf(product)}
               product={product}
-              key={product._id}
+              key={product.id}
             />
           );
         })}

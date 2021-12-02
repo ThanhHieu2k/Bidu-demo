@@ -1,10 +1,11 @@
 import * as React from "react";
 import { Seller } from "../../../data";
+import { ISeller } from "../../../models/topSeller";
 import { CardSeller } from "../../Card";
 
 import styles from "./TopSeller.module.scss";
 export interface TopSellerProps {
-  topSellerList: Seller[];
+  topSellerList: ISeller[];
 }
 
 export function TopSeller(props: TopSellerProps) {
