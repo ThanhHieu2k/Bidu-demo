@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './ProductItem.module.scss'
+import { formatPrice } from '../../../utils/helpers'
 
 import { product } from '../SuggestToday'
 
@@ -31,7 +32,7 @@ const ProductItem = ({product}:ProductItemProps) => {
                         </div>
                     </div>
                     <p className={styles["suggest__product-item-name"]}>{product.name || '-'}</p>
-                    <span className={styles["suggest__product-item-price"]}>200000 ₫</span>
+                    <span className={styles["suggest__product-item-price"]}>{formatPrice(product?.sale_price)} ₫</span>
                     <div className={styles["suggest__product-item-origin"]}>
                         <span className={styles["suggest__product-item-origin--icon"]}>
                             <Image

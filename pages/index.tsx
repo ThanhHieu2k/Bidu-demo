@@ -14,7 +14,7 @@ import TopSection from "../components/TopSection";
 import CategoryModel from "../models/categoryModel";
 
 const Home = (props:any) => {
-
+  // console.log(process.env.API_ENDPOINT_SUGGEST )
   return (
     <div>
         <Layout>

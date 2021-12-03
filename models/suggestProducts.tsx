@@ -8,7 +8,7 @@ export default class QuestionModel {
     private readonly name: string;
     private readonly sold: string;
     private readonly images: string[];
-    private readonly country: string;
+    private readonly sale_price: string;
 
 
     constructor(props: any) {
@@ -16,13 +16,15 @@ export default class QuestionModel {
         this.name = props?.name;
         this.sold = props?.sold;
         this.images = props?.images ;
+        this.sale_price = props?.sale_price ;
     }
 
     public toDTO = () => ({
         id: this._id,
         sold: this.sold,
         name: this.name,
-        images: this.images
+        images: this.images,
+        sale_price: this.sale_price,
     });
 
     public static getListArray = (array: any): object[] => {
