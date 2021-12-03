@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Product } from "../../../data";
+import * as React from "react";``
+import { ITopProduct } from "../../../models/topProducts";
 import { CardLatedProduct } from "../../Card";
 import styles from "./LatedProduct.module.scss";
 
 export interface LatedProductProps {
-  latedProductList: Product[];
+  latedProductList: ITopProduct[];
 }
 
 export default function LatedProduct(props: LatedProductProps) {

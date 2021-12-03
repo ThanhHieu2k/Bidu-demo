@@ -14,7 +14,12 @@ export function CardLatedProduct({ product }: CardLatedProductProps) {
       </div>
       <div className={styles.card__body}>
         <div className={styles.name}>{product.name}</div>
-        <div className={styles.price}>{product.price}</div>
+        <div className={styles.price}>
+          {Number(product.price).toLocaleString("vi-VN", {
+            style: "currency",
+            currency: "VND",
+          })}
+        </div>
         <div className={styles.location}>
           {product.location === "VN" ? "Viet Nam" : product.location}
         </div>

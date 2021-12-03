@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./CartProduct.module.scss";
-import { Product } from "../../../data";
 import { ITopProduct } from "../../../models/topProducts";
 export interface CardProductProps {
   rank: number;
@@ -16,7 +15,12 @@ export function CardProduct({ product, rank }: CardProductProps) {
       </div>
       <div className={styles.card__right}>
         <div className={styles.name}>{product.name}</div>
-        <div className={styles.price}>{product.price + " ₫"}</div>
+        <div className={styles.price}>
+          {Number(product.price).toLocaleString("vi-VN", {
+            style: "currency",
+            currency: "VND",
+          })}
+        </div>
         <div className={styles.location}>
           {product.location === "VN" ? "Viet Nam" : product.location}
         </div>
