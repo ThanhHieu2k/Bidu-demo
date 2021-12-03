@@ -7,8 +7,7 @@ export interface TopSellerProps {
   topSellerList: ISeller[];
 }
 
-export function TopSeller(props: TopSellerProps) {
-  const { topSellerList } = props;
+export function TopSeller({ topSellerList }: TopSellerProps) {
   return (
     <>
       <div className={styles.topSeller}>
@@ -16,9 +15,10 @@ export function TopSeller(props: TopSellerProps) {
           <span className={styles.content}>TOP NGƯỜI BÁN</span>
         </div>
         <div className={styles.topSeller__body}>
-          {topSellerList.map((seller) => {
-            return <CardSeller item={seller} key={seller.id} />;
-          })}
+          {topSellerList.length > 0 &&
+            topSellerList.map((seller) => {
+              return <CardSeller item={seller} key={seller.id} />;
+            })}
         </div>
       </div>
     </>

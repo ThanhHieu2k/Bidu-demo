@@ -1,29 +1,46 @@
 import { TopProduct } from "./TopProduct";
 import { TopSeller } from "./TopSeller";
-
 import * as React from "react";
-import { Product, Seller } from "../../data";
-import { Container, Col, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import LatedProduct from "./LatedProduct";
+import TopSectionService from "../../services/TopSection";
+import TopProductModel from "../../models/topProducts";
+import TopSellerModel from "../../models/topSeller";
 
-export interface TopSectionProps {
-  topProductList: Product[];
-  topSellerList: Seller[];
-  latedProductList: Product[];
-}
+export default function TopSection() {
+  const [topProduct, setTopProduct] = React.useState([]);
+  const [topSeller, setTopSeller] = React.useState([]);
+  const [newestProduct, setNewestProduct] = React.useState([]);
+  React.useEffect(() => {
+    async function fetchData() {
+      setTopProduct(
+        TopProductModel.getListArray(await TopSectionService.getTopProduct())
+      );
 
-export default function TopSection(props: TopSectionProps) {
-  const { topProductList, topSellerList, latedProductList } = props;
+      setTopSeller(
+        TopSellerModel.getListArray(await TopSectionService.getTopSeller())
+      );
+
+      setNewestProduct(
+        TopProductModel.getListArray(
+          (await TopSectionService.getNewestProduct()).slice(0, 4)
+        )
+      );
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <div className="grid">
       <Row>
         <Col lg="3">
-          <TopProduct topProductList={topProductList} />
+          <TopProduct topProductList={topProduct} />
         </Col>
         <Col lg="9">
           <>
-            <TopSeller topSellerList={topSellerList} />
-            <LatedProduct latedProductList={latedProductList} />
+            <TopSeller topSellerList={topSeller} />
+            <LatedProduct latedProductList={newestProduct} />
           </>
         </Col>
       </Row>
