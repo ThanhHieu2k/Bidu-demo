@@ -12,8 +12,33 @@
     border-bottom: 1px solid #f1f1f1;
   }
   &__body {
-    padding: 24px 21px 0;
+    padding: 24px 19px 0;
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
   }
+}
+
+.arrowPrev,
+.arrowNext {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 30%;
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &:hover {
+    background-color: rgb(219, 215, 215);
+    border-radius: 50%;
+  }
+}
+.arrowPrev {
+  left: -28px;
+}
+.arrowNext {
+  right: -28px;
 }
