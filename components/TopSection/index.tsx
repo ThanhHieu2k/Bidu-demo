@@ -22,9 +22,7 @@ export default function TopSection() {
       );
 
       setNewestProduct(
-        TopProductModel.getListArray(
-          (await TopSectionService.getNewestProduct()).slice(0, 4)
-        )
+        TopProductModel.getListArray(await TopSectionService.getNewestProduct())
       );
     }
 
