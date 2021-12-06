@@ -13,7 +13,7 @@ export default class ProductService {
             // console.log(API_ENDPOINT_PRODUCT + convertObjectToParams(params))
             return res.data
         }catch(e){
-            console.log(e)
+            throw(e)
         }
     }
 }

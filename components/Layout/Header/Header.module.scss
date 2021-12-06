@@ -40,6 +40,7 @@
                 position: relative;
                 margin-left: 30px;
                 text-decoration: none;
+                cursor: pointer;
 
 
                 &:last-child{
@@ -153,9 +154,7 @@
         &-main{ 
             margin-left: 50px !important ;
             // max-width: 40%;
-            &__input{
-               
-            } 
+            
         }
     }   
 }

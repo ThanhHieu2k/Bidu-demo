@@ -39,7 +39,7 @@ const SuggestToday = () => {
         setIsLoad(true)
         let data = await ProductService.getProduct(params)
         if(data){
-            console.log(data)
+            // console.log(data)
             let newData =  QuestionModel.getListArray(data.data)
             setProducts([...products,...newData])
             setIsLoad(false)

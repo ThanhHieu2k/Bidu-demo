@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap');
+
+
 * {
   box-sizing: border-box;
 }
@@ -36,6 +38,19 @@ a {
   width: 80px !important;
 } */
 
+
+.PhoneInputInput {
+    background: #f6f7f7;
+    border: 1px solid #f6f7f7;
+    height: 44px;
+    width: 30px;
+    padding: 8.75px 0;
+    outline: none;
+    line-height: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.6;
+}
 
 .slick-dots {
   position: absolute !important;
