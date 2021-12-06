@@ -8,8 +8,6 @@ import ProductItem from './ProductItem/ProductItem'
 import styles from './SuggestToday.module.scss'
 import QuestionModel from '../../models/suggestProducts'
 // import products from '../../lib/products'
-import ProductService from '../../services/sugproducts/index'
-
 
 
 
@@ -19,7 +17,6 @@ export interface product{
     sold:string,
     sale_price:string,
     price_min_max:any,
-    quantity: any,
 }
 
 
@@ -28,39 +25,26 @@ const SuggestToday = () => {
 
     const [products, setProducts] = useState([])
     const [isLoad,setIsLoad] = useState(false)
-    const [params, setParams] = useState({
-        limit:24,
-        page:1,
-        isFetchMore:true,
-    })
+    const [count,setCount] = useState(1)
     
 
-    const getDatas = async (params)=>{
+    const getDatas = async ()=>{
         setIsLoad(true)
-        let data = await ProductService.getProduct(params)
+        let data = await fetchAPI(count)
         if(data){
-            // console.log(data)
-            let newData =  QuestionModel.getListArray(data.data)
-            setProducts([...products,...newData])
+            data = QuestionModel.getListArray(data)
+            setProducts([...products,...data])
             setIsLoad(false)
-            setParams(params)
         }
     }
 
     useEffect(()=>{
-        getDatas(params)
-    },[])
+        getDatas()
+    },[count])
 
     const handleSeeMore =()=>{
-        // setCount(prev=>prev+1)
-        getDatas({
-            ...params,
-            page:++params.page,
-        })
+        setCount(prev=>prev+1)
     }
-
-
-    // console.log(ProductService.getProduct(params))
 
     return (
         <div className={styles["suggest"] + ' grid'}>

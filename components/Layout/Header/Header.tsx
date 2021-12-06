@@ -2,8 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
-import Modal from "../../Modal/Modal"
-import {useState,useEffect} from 'react'
+
 
 export interface HeaderProps{
    
@@ -11,31 +10,8 @@ export interface HeaderProps{
 
 const Header  = ( ) =>{
 
-    const [showModal, setShowModal] = useState(false)
-    const [isLogin,setIsLogin] = useState(true)
-    const handleShow = ()=>{
-        setShowModal(true)
-    }
-    const handleClose = ()=>{
-        setShowModal(false)
-    }
-
-    const handleSubmit = (values)=>{
-        if(isLogin){
-            console.log({Login: values})
-        }else{
-            console.log({Register: values})
-        }
-        setTimeout(()=>setShowModal(false),500)
-    }
-
-    const handleTrans=()=>{
-        setIsLogin(false)
-    }
-
     return (
         <div className={styles['header-container']}>
-            {showModal&& <Modal handleClose={handleClose} isLogin={isLogin} handleSubmit={handleSubmit} handleTrans={handleTrans}/>}
             <header className={styles['header-wrap']}>
                 <div className={styles['header'] + ' grid'}>
                     <div className={styles['header-left']}>
@@ -47,9 +23,14 @@ const Header  = ( ) =>{
                         </Link>
                     </div>
                     <div className={styles['header-right']}>
-                        <span className={styles["header-right__content"]}>Việt Nam</span>                       
-                        <span className={styles['header-right__content']} onClick={()=>{handleShow();setIsLogin(false)}}>Đăng ký </span>                   
-                        <span className={styles['header-right__content']} onClick={()=>{handleShow();setIsLogin(true)}}>Đăng nhập</span>
+                        <span className={styles["header-right__content"]}>Việt Nam</span>
+                        <Link href="/">
+                            <a className={styles['header-right__content']}>Đăng ký</a>
+                        </Link>
+                        <Link href="/">
+                            <a className={styles['header-right__content']}>Đăng nhập</a>
+                        </Link>
+
                     </div>
                 </div>
             </header>
