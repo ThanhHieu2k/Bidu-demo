@@ -1,0 +1,24 @@
+.Input {
+  background: #f6f7f7;
+  border: 1px solid #f6f7f7;
+  height: 44px;
+  width: 100%;
+  padding: 8.75px 10.5px;
+  outline: none;
+  line-height: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.mb3 {
+  position: relative;
+}
+.error {
+  position: absolute;
+  top: 50%;
+  right: -290px;
+  transform: translateY(-50%);
+  margin: 0px;
+  font-size: 15px;
+  font-weight: 400;
+}

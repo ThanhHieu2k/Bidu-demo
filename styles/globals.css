@@ -36,7 +36,6 @@ a {
   width: 80px !important;
 } */
 
-
 .slick-dots {
   position: absolute !important;
   right: 0px !important;
@@ -116,8 +115,6 @@ a {
     z-index: 15 !important;
     list-style: none !important;
   }
-
- 
 }
 
 .grid {
@@ -138,4 +135,22 @@ a {
   .main {
     margin-top: 129px;
   }
+}
+
+.mb-3 {
+  position: relative !important;
+}
+
+.PhoneInputInput {
+  /* display: none !important; */
+  background: #f6f7f7;
+  border: 1px solid #f6f7f7;
+  height: 44px;
+  width: 100%;
+  padding: 8.75px 10.5px;
+  outline: none;
+  line-height: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.6;
 }

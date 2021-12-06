@@ -1,0 +1,151 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  z-index: 100;
+
+  &__overlay {
+    background-color: #191919;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__body {
+    margin: auto;
+    position: relative;
+    width: 819px;
+    height: 508px;
+    background-color: #fff;
+    display: flex;
+    animation: fadeIn 0.2s ease-in-out;
+
+    &-left {
+      width: 317px;
+      height: 100%;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-right {
+      flex: 1;
+    }
+
+    &-close {
+      position: absolute;
+      top: 24.8px;
+      right: 24.8px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 20px;
+      color: #000;
+      margin: 40px 0 30px 60px;
+    }
+
+    &-form {
+      padding: 0 60px 40px;
+      width: 100%;
+
+      &-otherLogin {
+        font-family: var(--font-normal);
+        margin-top: 40px;
+        text-align: center;
+        font-size: 14px;
+
+        &-image {
+          padding: 12px 0;
+          img {
+            margin: 0px 12px !important;
+          }
+        }
+
+        &-forgotPass {
+          font-weight: bold;
+        }
+
+        &-signup {
+          color: #fd375e;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+      &-group {
+        margin-bottom: 12px;
+
+        &-phone {
+          display: flex;
+          background-color: #f6f7f7;
+          margin-bottom: 12px;
+          align-items: center;
+          height: 40px;
+          font-size: 13px;
+          padding: 10px 12px;
+        }
+      }
+      &-checkbox {
+        width: 16px;
+        height: 16px;
+        margin-left: 16px;
+      }
+      &-policy {
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 15px;
+        width: 100%;
+
+        &-link {
+          font-weight: bold;
+          text-decoration: none;
+          color: #333 !important;
+          &:nth-child(2) {
+            margin-left: 50px;
+            display: inline-block;
+          }
+        }
+      }
+      &-submit {
+        background: #fff;
+        border: 1px solid #fff;
+        box-shadow: 1px 1px 7px rgb(155 155 155 / 30%);
+        padding-top: 12px;
+        padding-bottom: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: var(--font-bold);
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        color: #a3a3a3;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
