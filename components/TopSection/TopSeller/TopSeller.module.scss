@@ -1,0 +1,25 @@
+.topSeller {
+  border: 1.5px solid rgb(241, 241, 241);
+  width: 1003px;
+  &__head {
+    background-color: black;
+    color: white;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      font-family: "Lexend";
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 22px;
+      color: #ffffff;
+    }
+  }
+  &__body {
+    margin-left: 40px;
+    padding: 0 0 10px 0;
+  }
+}

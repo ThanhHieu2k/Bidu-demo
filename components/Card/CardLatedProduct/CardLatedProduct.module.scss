@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&family=Open+Sans:wght@400&display=swap");
+
+.card {
+  padding: 15px 19px 0;
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  height: 350px;
+  display: inline-block;
+
+  img {
+    width: 163px;
+    height: 163px;
+  }
+
+  // &:hover {
+  //   transition: transform 0.5s ease;
+  //   transform: translateY(-3px);
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  //   -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  // }
+
+  &__body {
+    font-size: 16px;
+    line-height: 20px;
+    .name {
+      font-family: "lexend";
+      margin-top: 5px;
+    }
+    .price {
+      font-family: "Lexend";
+      font-style: normal;
+      font-weight: bold;
+      color: #191919;
+    }
+    .location {
+      font-family: "Lexend";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+      color: #191919;
+    }
+    .sold {
+      // position: absolute;
+      // bottom: 10px;
+      font-family: "Lexend";
+      font-size: 10px;
+      line-height: 12px;
+      color: #9a9a9a;
+    }
+  }
+}
