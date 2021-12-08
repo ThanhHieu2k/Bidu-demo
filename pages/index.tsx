@@ -15,40 +15,43 @@ import RegisterModal from "../components/RegisterModal";
 import CategoryModel from "../models/categoryModel";
 import CategoryAPI from "../services/CategoryAPI";
 
+import ModalLayout from "../components/ModalLayout";
+
 // Import scss place
 import styles from "./modal.module.scss";
 
 const Home = (props: any) => {
   const [isType, setIsType] = useState("");
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   const handleCancel = () => {
     setIsModalVisible(false);
   };
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  function renderModal() {
-    if (isModalVisible && isType === "login") {
-      return (
-        <Modal
-          className={`${styles["ant-modal-content"]}`}
-          visible={isModalVisible}
-          onCancel={handleCancel}
-        >
-          <LoginModal />
-        </Modal>
-      );
-    } else if (isModalVisible && isType === "register") {
-      return (
-        <Modal
-          className={`${styles["ant-modal-content"]}`}
-          visible={isModalVisible}
-          onCancel={handleCancel}
-        >
-          <RegisterModal />
-        </Modal>
-      );
-    }
-  }
+  // function renderModal() {
+  //   if (isModalVisible && isType === "login") {
+  //     return (
+  //       <Modal
+  //         className={`${styles["ant-modal-content"]}`}
+  //         visible={isModalVisible}
+  //         onCancel={handleCancel}
+  //       >
+  //         <LoginModal />
+  //       </Modal>
+  //     );
+  //   } else if (isModalVisible && isType === "register") {
+  //     return (
+  //       <Modal
+  //         className={`${styles["ant-modal-content"]}`}
+  //         visible={isModalVisible}
+  //         onCancel={handleCancel}
+  //       >
+  //         <RegisterModal />
+  //       </Modal>
+  //     );
+  //   }
+  // }
 
   return (
     <div>
@@ -59,7 +62,12 @@ const Home = (props: any) => {
         setIsModalVisible={setIsModalVisible}
       >
         <div className="main">
-          {renderModal()}
+          {/* {renderModal()} */}
+          <ModalLayout
+            isModalVisible={isModalVisible}
+            onCancel={handleCancel}
+            isType={isType}
+          />
           <Banner categories={props.categories} />
           <TopSection
             topProductList={props.topProduct}

@@ -32,12 +32,50 @@ a {
   text-decoration: none;
 }
 
-.ant-modal-footer {
-  display: none !important;
+.ant-modal {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum", "tnum";
+  pointer-events: none;
+  position: relative;
+  top: 126px !important;
+  width: auto;
+  left: -7% !important;
+  max-width: calc(100vw - 32px);
+  margin: 0 auto;
+  padding-bottom: 24px;
+
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+
+.ant-modal-wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  outline: 0;
 }
 
 .ant-modal-body {
   padding: 0px !important;
+}
+
+.ant-modal-content {
+  min-width: 800px;
+  height: 486px;
+}
+
+.ant-modal-footer {
+  display: none !important;
 }
 
 .slick-dots {

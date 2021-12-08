@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const Axios = axios.create({
-  baseURL : process.env.apiGateway
+  baseURL : process.env.API_ENDPOINT
 })
 
 Axios.interceptors.request.use(

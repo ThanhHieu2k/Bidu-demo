@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "../../utils/axios";
 import { convertObjectToParams } from "../../utils/helpers";
 
-const categoriesAPI = "/v2/mobile/categories/by-system?limit=1000%27";
+const categoriesAPI = `/mobile/categories/by-system`;
 
 // Get Category API
 const API_ENDPOINT_CATEGORY = process.env.API_ENDPOINT + `${categoriesAPI}`;
