@@ -20,6 +20,8 @@ const RegisterModal = () => {
 
   const [isShowPassword, setIsShowPassword] = useState(false);
 
+  const [isShowConfirmPwd, setIsShowConfirmPwd] = useState(false);
+
   const [value, setValue] = useState(null);
   console.log("value: ", value);
 
@@ -91,7 +93,7 @@ const RegisterModal = () => {
                 <Field
                   id="userConfirmPwd"
                   name="userConfirmPwd"
-                  type={isShowPassword ? "text" : "password"}
+                  type={isShowConfirmPwd ? "text" : "password"}
                   placeholder="Xác nhận mật khẩu"
                 />
                 {errors.userConfirmPwd && touched.userConfirmPwd ? (
@@ -102,10 +104,12 @@ const RegisterModal = () => {
                   <img
                     className={styles.register__modal_form_field_img}
                     src={
-                      isShowPassword ? `/images/eye.svg` : `images/eyeshow.png`
+                      isShowConfirmPwd
+                        ? `/images/eye.svg`
+                        : `images/eyeshow.png`
                     }
                     alt="Eye Password"
-                    onClick={() => setIsShowPassword(!isShowPassword)}
+                    onClick={() => setIsShowConfirmPwd(!isShowConfirmPwd)}
                   />
                 )}
               </div>
