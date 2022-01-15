@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import styles from './Header.module.scss'
 import Link from 'next/link'
+import { useState } from 'react'
+import Modal from '../../Modal/Modal'
 
 
 export interface HeaderProps{
@@ -10,26 +12,61 @@ export interface HeaderProps{
 
 const Header  = ( ) =>{
 
+
+    const [isShow,setIsShow] = useState(false)
+    const [isLogin, setIsLogin] = useState(true)
+
+    const handleClose = ()=>{
+        setIsShow(false)
+    }
+
+    const handleSubmit=(values)=>{
+        if(isLogin){
+            console.log({Login:values})
+        }else{
+            console.log({Register:values})
+        }
+        setIsShow(false)
+    }
+
+    const handleTrans = ()=>{
+        setIsLogin(false)
+    }
+
+
     return (
         <div className={styles['header-container']}>
+            {isShow&&<Modal isLogin ={isLogin} handleTrans={handleTrans} handleClose={handleClose} handleSubmit={handleSubmit} />}
             <header className={styles['header-wrap']}>
                 <div className={styles['header'] + ' grid'}>
                     <div className={styles['header-left']}>
-                        <Link href="/">
-                            <a className={styles['header-left__content']}>Trang người bán</a>                       
-                        </Link>
-                        <Link href="/">
-                            <a className={styles['header-left__content']}>Danh mục</a>
-                        </Link>
+                    <Link href="/">
+                        <a className={styles['header-left__content']}>Trang người bán</a>                       
+                    </Link>
+
+                    <Link href="/">
+                        <a className={styles['header-left__content']}>Danh mục</a>                       
+                    </Link>
+                
+                    {/* <div className={styles['header-left__content']}>Danh mục</div> */}
+                        
                     </div>
                     <div className={styles['header-right']}>
                         <span className={styles["header-right__content"]}>Việt Nam</span>
-                        <Link href="/">
-                            <a className={styles['header-right__content']}>Đăng ký</a>
-                        </Link>
-                        <Link href="/">
-                            <a className={styles['header-right__content']}>Đăng nhập</a>
-                        </Link>
+                        
+                        <div className={styles['header-right__content']} onClick={()=>{
+                            setIsLogin(false);
+                            setIsShow(true)
+
+                        }}>Đăng ký</div>
+                    
+                    
+                        <div className={styles['header-right__content']} onClick={()=>{
+                            setIsLogin(true);
+                            setIsShow(true)
+
+                        }}>Đăng nhập</div>
+                        
 
                     </div>
                 </div>

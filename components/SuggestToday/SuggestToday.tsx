@@ -11,15 +11,12 @@ import QuestionModel from '../../models/suggestProducts'
 import ProductService from '../../services/sugproducts/index'
 
 
-
-
 export interface product{
     name: string,
     images: string[],
     sold:string,
     sale_price:string,
     price_min_max:any,
-    quantity: any,
 }
 
 
@@ -28,6 +25,7 @@ const SuggestToday = () => {
 
     const [products, setProducts] = useState([])
     const [isLoad,setIsLoad] = useState(false)
+    // const [count,setCount] = useState(1)
     const [params, setParams] = useState({
         limit:24,
         page:1,
@@ -37,9 +35,8 @@ const SuggestToday = () => {
 
     const getDatas = async (params)=>{
         setIsLoad(true)
-        let data = await ProductService.getProduct(params)
+        let data = await ProductService.getProduct(params) 
         if(data){
-            console.log(data)
             let newData =  QuestionModel.getListArray(data.data)
             setProducts([...products,...newData])
             setIsLoad(false)
@@ -52,15 +49,11 @@ const SuggestToday = () => {
     },[])
 
     const handleSeeMore =()=>{
-        // setCount(prev=>prev+1)
         getDatas({
             ...params,
             page:++params.page,
         })
     }
-
-
-    // console.log(ProductService.getProduct(params))
 
     return (
         <div className={styles["suggest"] + ' grid'}>

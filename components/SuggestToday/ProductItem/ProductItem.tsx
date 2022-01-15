@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './ProductItem.module.scss'
 import { formatPrice } from '../../../utils/helpers'
-
 import { product } from '../SuggestToday'
 
 export interface ProductItemProps{

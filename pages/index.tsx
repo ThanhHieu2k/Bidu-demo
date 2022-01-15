@@ -10,6 +10,7 @@ import Banner from "../components/Banner";
 import TopProductModel from "../models/topProducts";
 import TopSellerModel from "../models/topSeller";
 import TopSection from "../components/TopSection";
+import Modal from "../Components/Modal/Modal";
 
 import CategoryModel from "../models/categoryModel";
 
@@ -21,6 +22,7 @@ const Home = (props: any) => {
     <div>
       <Layout>
         <div className="main">
+          {/* <Modal/> */}
           <Banner categories={props.categories} />
           <TopSection />
           <SuggestToday />

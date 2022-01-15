@@ -1,0 +1,247 @@
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    z-index: 100;
+
+}
+
+
+
+.modal__overlay{
+    background-color: #191919;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__body{
+    margin: auto;
+    position:relative;
+    width: 819px;
+    height: 508px;
+    background-color:#fff;
+    display: flex;
+    animation: fadeIn 0.3s linear;
+
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+.modal__body-left{
+    width: 317px;
+    height:100%;
+    
+}
+.modal__body-left-img{
+    width: 100%;
+    height: 100%;
+}
+
+.modal__body-right{
+   flex: 1;
+}
+
+.modal__body-close{
+    position: absolute;
+    top: 24.8px;
+    right: 24.8px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.modal__body-close-img{
+    width: 18px;
+    height: 18px;
+}
+
+.modal__body-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 20px;
+    color: #000;
+    margin: 40px 0 30px 60px;
+}
+
+.modal__body-form{
+    padding: 0 60px 40px;
+}
+
+.modal__body-form{
+    width: 100%;
+}
+
+.modal__body-form-group{
+    margin-bottom: 12px;
+    /* display: flex; */
+    position: relative;
+}
+
+.modal__body-form-input{
+    background: #f6f7f7;
+    border: 1px solid #f6f7f7;
+    height: 44px;
+    width: 100%;
+    padding: 8.75px 10.5px;
+    outline: none;
+    line-height: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+
+.modal__body-form-checkbox{
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+}
+
+.modal__body-form-policy{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 15px;
+    width: 100%;
+}
+.modal__body-form-policy-link{
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+
+
+    &:nth-child(2){
+        margin-left: 50px;
+        display: inline-block;
+    }
+}
+
+
+
+.modal__body-form-submit{
+    background: #fff;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 7px rgb(155 155 155 / 30%);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: var(--font-bold);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: #a3a3a3;
+    margin-top: 4px;
+}
+
+.modal__body-form-group-phone{
+    display: flex;
+    background-color:#f6f7f7;
+    margin-bottom: 12px;
+    align-items: center;
+    position: relative;
+}
+
+
+.PhoneInputCountry {
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.PhoneInputCountrySelect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    border: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.PhoneInputCountryIcon {
+    width:19px ;
+    height: 12.5px;
+    margin-top: -4px;
+}
+
+.PhoneInputCountryIcon img {
+    border-radius: 3px;
+}
+
+.PhoneInputCountrySelectArrow{
+    margin-left: 8px;
+    margin-top: 1px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+
+.sign-in-social-text{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form__login-menu {
+    display: flex;
+    justify-content: center
+}
+
+.form__login-menu-img{
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.form__login-menu-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.forget-password-text{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 24px;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signup-promo-text{
+    margin-top: 10px;
+    font-family: var(--font-normal);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+    
+}
+
+.signup-promo-text span{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fd375e;
+}
